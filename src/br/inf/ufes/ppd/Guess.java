@@ -10,6 +10,9 @@ package br.inf.ufes.ppd;
 import java.io.Serializable;
 
 public class Guess implements Serializable {
+	
+	private int attackNumber;
+	
 	private String key;
 	// chave candidata
 
@@ -27,6 +30,12 @@ public class Guess implements Serializable {
 	}
 	public void setMessage(byte[] message) {
 		this.message = message;
+	}
+	public int getAttackNumber() {
+		return attackNumber;
+	}
+	public void setAttackNumber(int attackNumber) {
+		this.attackNumber = attackNumber;
 	}
 
 }

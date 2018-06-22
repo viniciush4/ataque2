@@ -15,6 +15,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.jms.*;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonObjectBuilder;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -23,6 +26,7 @@ import com.sun.messaging.ConnectionConfiguration;
 
 import br.inf.ufes.ppd.Guess;
 import br.inf.ufes.ppd.Master;
+import br.inf.ufes.ppd.Ordem;
 import br.inf.ufes.ppd.Slave;
 
 public class MasterImpl implements MessageListener, Master
@@ -37,10 +41,11 @@ public class MasterImpl implements MessageListener, Master
 	private static Queue subAttacks;
 	private static JMSProducer producer;
 	
-	// Lista de chutes recebidos
+	// Lista de chutes
 	private static Queue guesses;
 	private static JMSConsumer consumer;
 	
+	// Contexto JMS
 	private static JMSContext context;
 	
 	// Lista de ataques em andamento
@@ -64,6 +69,7 @@ public class MasterImpl implements MessageListener, Master
 			
 			configurarRMI();
 			configurarJMS();
+			while(true) {}
 		}
 		catch (Exception e) 
 		{
@@ -135,28 +141,16 @@ public class MasterImpl implements MessageListener, Master
 			indiceInicial = i*m;
 			indiceFinal = indiceInicial+m-1;
 			
-			TextMessage message = context.createTextMessage(); 
-			try 
-			{
-				message.setText("indiceInicial: "+indiceInicial+"   -   indiceFinal: "+indiceFinal);
-			} 
-			catch (JMSException e) 
-			{
-				e.printStackTrace();
-			}
+			Ordem ordem = new Ordem(attack.getAttackNumber(), indiceInicial, indiceFinal, ciphertext, knowntext);
+			ObjectMessage message = context.createObjectMessage(ordem); 
 			producer.send(subAttacks,message);
+			synchronized(attacks) { attacks.get(attack.getAttackNumber()).incrementaSubataquesEmAndamento(); }
 		}
 		
-		TextMessage message = context.createTextMessage(); 
-		try 
-		{
-			message.setText("indiceInicial: "+(indiceFinal+1)+"   -   indiceFinal: "+(mod-1));
-		} 
-		catch (JMSException e) 
-		{
-			e.printStackTrace();
-		}
+		Ordem ordem = new Ordem(attack.getAttackNumber(), (indiceFinal+1), (mod-1), ciphertext, knowntext);
+		ObjectMessage message = context.createObjectMessage(ordem); 
 		producer.send(subAttacks,message);
+		synchronized(attacks) { attacks.get(attack.getAttackNumber()).incrementaSubataquesEmAndamento(); }
 		
 		// Espera até que todos os sub-ataques tenham terminado
 		while(attacks.get(attack.getAttackNumber()).getQuantidadeSubataquesEmAndamento() > 0){}
@@ -173,15 +167,31 @@ public class MasterImpl implements MessageListener, Master
 	}
 
 	@Override
-	public void onMessage(Message m) {
-		try {
+	public void onMessage(Message m) 
+	{
+		try 
+		{
+			if (m instanceof ObjectMessage)
+			{
+				Guess guess = (Guess)((ObjectMessage) m).getObject();
+				
+				// Coloca o guess na lista do ataque correspondente
+				synchronized(attacks) {attacks.get(guess.getAttackNumber()).guesses.add(guess);}
+				
+				System.out.println("[#"+guess.getAttackNumber()+"] "+guess.getKey());
+			}
 			if (m instanceof TextMessage)
 			{
-				System.out.print("\nreceived message: ");
-				System.out.println(((TextMessage)m).getText());
-				System.out.print("enter your message:");
+				int attackNumber = Integer.parseInt(((TextMessage) m).getText());
+				
+				// Decrementa a quantidade de sub-ataques em andamento
+				synchronized(attacks) {attacks.get(attackNumber).decrementaSubataquesEmAndamento();}
+				
+				//synchronized(attacks) {System.out.println("[#"+attackNumber+"] "+attacks.get(attackNumber).getQuantidadeSubataquesEmAndamento());}
 			}
-		} catch (JMSException e) {
+		} 
+		catch (JMSException e) 
+		{
 			e.printStackTrace();
 		}
 	}
