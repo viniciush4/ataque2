@@ -97,28 +97,26 @@ public class MasterImpl implements MessageListener, Master
 	
 	public static void configurarJMS() throws JMSException, NamingException 
 	{
+		// Initial context factory
 		Logger.getLogger("").setLevel(Level.SEVERE);
-		
 		Hashtable env = new Hashtable();
 		env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.enterprise.naming.SerialInitContextFactory");
-		
-		InitialContext ic = new InitialContext(env);
-					
+		InitialContext ic = new InitialContext(env);					
 		ConnectionFactory connectionFactory = (ConnectionFactory)ic.lookup("jms/__defaultConnectionFactory");
+		System.out.println("[master] Resolved connection factory.");
 		
-		System.out.println("resolved connection factory.");
-		
+		// Faz lookup nas filas
 		subAttacks = (Queue)ic.lookup("jms/SubAttacksQueue");
 		guesses = (Queue)ic.lookup("jms/GuessesQueue");
+		System.out.println("[master] Resolved queue.");
 
-		System.out.println("resolved queue.");
-
+		// Cria context, producer e consumer
 		context = connectionFactory.createContext();
-		
 		producer = context.createProducer();
 		consumer = context.createConsumer(guesses,null,false); 
-		MessageListener messageListener = new MasterImpl();
-		consumer.setMessageListener(messageListener); 
+
+		// Define a classe como ouvidor de mensagens
+		consumer.setMessageListener(new MasterImpl()); 
 	}
 
 	public Guess[] attack(byte[] ciphertext, byte[] knowntext) throws RemoteException 
@@ -129,13 +127,14 @@ public class MasterImpl implements MessageListener, Master
 		// Adiciona o ataque na lista de ataques
 		synchronized(attacks) {	attacks.put(attack.getAttackNumber(), attack); }
 		
-		// Calcula os índices do dicionário para o primeiro escravo
+		// Distribuição dos índices
 		int tamanhoDicionario = 80368;
 		int divisao = (tamanhoDicionario / m);
 		int mod = tamanhoDicionario % m;
 		int indiceInicial=0;
 		int indiceFinal=0;
 		
+		// Distribui a parte interia da divisão
 		for(int i=0; i<divisao; i++)
 		{
 			indiceInicial = i*m;
@@ -147,6 +146,7 @@ public class MasterImpl implements MessageListener, Master
 			synchronized(attacks) { attacks.get(attack.getAttackNumber()).incrementaSubataquesEmAndamento(); }
 		}
 		
+		// Distrubui o resto da divisão
 		Ordem ordem = new Ordem(attack.getAttackNumber(), (indiceFinal+1), (mod-1), ciphertext, knowntext);
 		ObjectMessage message = context.createObjectMessage(ordem); 
 		producer.send(subAttacks,message);
@@ -178,16 +178,15 @@ public class MasterImpl implements MessageListener, Master
 				// Coloca o guess na lista do ataque correspondente
 				synchronized(attacks) {attacks.get(guess.getAttackNumber()).guesses.add(guess);}
 				
-				System.out.println("[#"+guess.getAttackNumber()+"] "+guess.getKey());
+				System.out.println("["+guess.getNomeEscravo()+" #"+guess.getAttackNumber()+"] "+guess.getKey());
 			}
 			if (m instanceof TextMessage)
 			{
+				// Coverte a mensagem em um interio (representa o número do ataque)
 				int attackNumber = Integer.parseInt(((TextMessage) m).getText());
 				
 				// Decrementa a quantidade de sub-ataques em andamento
 				synchronized(attacks) {attacks.get(attackNumber).decrementaSubataquesEmAndamento();}
-				
-				//synchronized(attacks) {System.out.println("[#"+attackNumber+"] "+attacks.get(attackNumber).getQuantidadeSubataquesEmAndamento());}
 			}
 		} 
 		catch (JMSException e) 

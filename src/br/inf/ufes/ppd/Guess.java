@@ -11,6 +11,8 @@ import java.io.Serializable;
 
 public class Guess implements Serializable {
 	
+	private String nomeEscravo;
+	
 	private int attackNumber;
 	
 	private String key;
@@ -36,6 +38,12 @@ public class Guess implements Serializable {
 	}
 	public void setAttackNumber(int attackNumber) {
 		this.attackNumber = attackNumber;
+	}
+	public String getNomeEscravo() {
+		return nomeEscravo;
+	}
+	public void setNomeEscravo(String nomeEscravo) {
+		this.nomeEscravo = nomeEscravo;
 	}
 
 }

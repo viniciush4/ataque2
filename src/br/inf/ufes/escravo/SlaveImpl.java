@@ -34,6 +34,8 @@ import br.inf.ufes.ppd.Slave;
 
 public class SlaveImpl implements MessageListener 
 {
+	// Nome do escravo
+	private static String nomeEscravo;
 
 	// Lista de sub-ataques
 	private static Queue subAttacks;
@@ -50,6 +52,14 @@ public class SlaveImpl implements MessageListener
 	{
 		try 
 		{
+			// Se não foi fornecido exatamente um argumento
+			if(args.length < 1) {
+				throw new Exception("Uso: SlaveImpl <NOME_ESCRAVO>");
+			}
+
+			// Recebe o host e a quantidade de índices por sub-ataque
+			nomeEscravo = args[0];
+			
 			configurarJMS();
 			while(true) {}
 
@@ -62,28 +72,26 @@ public class SlaveImpl implements MessageListener
 	
 	public static void configurarJMS() throws JMSException, NamingException 
 	{
+		// Initial context factory
 		Logger.getLogger("").setLevel(Level.SEVERE);
-		
 		Hashtable env = new Hashtable();
 		env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.enterprise.naming.SerialInitContextFactory");
-		
-		InitialContext ic = new InitialContext(env);
-					
+		InitialContext ic = new InitialContext(env);		
 		ConnectionFactory connectionFactory = (ConnectionFactory)ic.lookup("jms/__defaultConnectionFactory");
+		System.out.println("["+nomeEscravo+"] Resolved connection factory.");
 		
-		System.out.println("resolved connection factory.");
-		
+		// Faz lookup nas filas
 		subAttacks = (Queue)ic.lookup("jms/SubAttacksQueue");
 		guesses = (Queue)ic.lookup("jms/GuessesQueue");
+		System.out.println("["+nomeEscravo+"] Resolved queue.");
 
-		System.out.println("resolved queue.");
-
+		// Cria context, producer e consumer
 		context = connectionFactory.createContext();
-		
 		producer = context.createProducer();
 		consumer = context.createConsumer(subAttacks,null,false); 
-		MessageListener messageListener = new SlaveImpl();
-		consumer.setMessageListener(messageListener); 
+		
+		// Define a classe como ouvidor de mensagens
+		consumer.setMessageListener(new SlaveImpl()); 
 	}
 
 	@Override
@@ -94,7 +102,6 @@ public class SlaveImpl implements MessageListener
 			if (m instanceof ObjectMessage)
 			{
 				Ordem ordem = (Ordem)((ObjectMessage)m).getObject();
-				System.out.println("[#"+ordem.getAttackNumber()+"] índices "+ordem.getIndiceInicial()+" a "+ordem.getIndiceFinal());
 				startSubAttack(ordem);
 			}
 		} 
@@ -112,6 +119,9 @@ public class SlaveImpl implements MessageListener
 	{
 		try
 		{
+			// Imprime os índices inicial e final do sub-ataque
+			System.out.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] índices "+ordem.getIndiceInicial()+" a "+ordem.getIndiceFinal());
+			
 			// Lê o arquivo do dicionário
 			File arquivo = new File("../dictionary.txt");
 			FileReader arq = new FileReader(arquivo);
@@ -149,11 +159,12 @@ public class SlaveImpl implements MessageListener
 					currentguess.setKey(palavra);
 					currentguess.setMessage(decrypted);
 					currentguess.setAttackNumber(ordem.getAttackNumber());
+					currentguess.setNomeEscravo(nomeEscravo);
 					ObjectMessage message = context.createObjectMessage(currentguess);
 					producer.send(guesses,message);
 					
 					// Imprime no escravo os índices inicial e final
-					System.err.println("[#"+ordem.getAttackNumber()+"] "+i+" "+currentguess.getKey());
+					System.err.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] "+i+" "+currentguess.getKey());
 				}
 			}
 			
@@ -166,7 +177,7 @@ public class SlaveImpl implements MessageListener
 		}
 		
 		// Imprime no escravo aviso de fim
-		System.err.println("[#"+ordem.getAttackNumber()+"] Sub-ataque finalizado");
+		System.err.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] Sub-ataque finalizado");
 		
 		// Informa ao mestre o término do sub-ataque
 		TextMessage message = context.createTextMessage(ordem.getAttackNumber()+"");
