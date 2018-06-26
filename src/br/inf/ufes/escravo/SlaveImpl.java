@@ -34,6 +34,9 @@ import br.inf.ufes.ppd.Slave;
 
 public class SlaveImpl implements MessageListener 
 {
+	// Modo Overhead
+	private static boolean overhead;
+		
 	// Nome do escravo
 	private static String nomeEscravo;
 
@@ -53,12 +56,15 @@ public class SlaveImpl implements MessageListener
 		try 
 		{
 			// Se não foi fornecido exatamente um argumento
-			if(args.length < 1) {
-				throw new Exception("Uso: SlaveImpl <NOME_ESCRAVO>");
+			if(args.length < 2) {
+				throw new Exception("Uso: SlaveImpl <NOME_ESCRAVO> <HAB_MODO_OVERHEAD? 0-N | 1-S>");
 			}
 
 			// Recebe o host e a quantidade de índices por sub-ataque
 			nomeEscravo = args[0];
+			
+			// Guarda preferência do modo overhead
+			overhead = (Integer.parseInt(args[1]) == 1) ? true : false;
 			
 			configurarJMS();
 			while(true) {}
@@ -117,63 +123,67 @@ public class SlaveImpl implements MessageListener
 	
 	public void startSubAttack(Ordem ordem)
 	{
-		try
+		// Se não estiver em modo overhead
+		if(!overhead) 
 		{
-			// Imprime os índices inicial e final do sub-ataque
-			System.out.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] índices "+ordem.getIndiceInicial()+" a "+ordem.getIndiceFinal());
-			
-			// Lê o arquivo do dicionário
-			File arquivo = new File("../dictionary.txt");
-			FileReader arq = new FileReader(arquivo);
-			BufferedReader lerArq = new BufferedReader(arq);
-			
-			// Avança até índice inicial
-			for(long i=0;i<ordem.getIndiceInicial();i++) { lerArq.readLine(); }
-			
-			// Percorre o intervalo solicitado no dicionario
-			for(long i=ordem.getIndiceInicial(); i<=ordem.getIndiceFinal();i++) 
+			try
 			{
-				// Lê a palavra candidata
-				String palavra = lerArq.readLine();
-				byte[] decrypted = null;
+				// Imprime os índices inicial e final do sub-ataque
+				System.out.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] índices "+ordem.getIndiceInicial()+" a "+ordem.getIndiceFinal());
 				
-				try
-				{
-					// Usa a palavra para descriptografar o ciphertext
-					byte[] key = palavra.getBytes();
-					SecretKeySpec keySpec = new SecretKeySpec(key, "Blowfish");
-					Cipher cipher = Cipher.getInstance("Blowfish");
-					cipher.init(Cipher.DECRYPT_MODE, keySpec);
-					decrypted = cipher.doFinal(ordem.getCiphertext());
-				} 
-				catch (javax.crypto.BadPaddingException e) 
-				{
-					continue;
-				}
+				// Lê o arquivo do dicionário
+				File arquivo = new File("../dictionary.txt");
+				FileReader arq = new FileReader(arquivo);
+				BufferedReader lerArq = new BufferedReader(arq);
 				
-				// Verifica se o knowntext existe no texto descriptografado
-				if(bytesContains(decrypted, ordem.getKnowntext()))
+				// Avança até índice inicial
+				for(long i=0;i<ordem.getIndiceInicial();i++) { lerArq.readLine(); }
+				
+				// Percorre o intervalo solicitado no dicionario
+				for(long i=ordem.getIndiceInicial(); i<=ordem.getIndiceFinal();i++) 
 				{
-					// Avisa ao mestre 
-					Guess currentguess = new Guess();
-					currentguess.setKey(palavra);
-					currentguess.setMessage(decrypted);
-					currentguess.setAttackNumber(ordem.getAttackNumber());
-					currentguess.setNomeEscravo(nomeEscravo);
-					ObjectMessage message = context.createObjectMessage(currentguess);
-					producer.send(guesses,message);
+					// Lê a palavra candidata
+					String palavra = lerArq.readLine();
+					byte[] decrypted = null;
 					
-					// Imprime no escravo os índices inicial e final
-					System.err.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] "+i+" "+currentguess.getKey());
+					try
+					{
+						// Usa a palavra para descriptografar o ciphertext
+						byte[] key = palavra.getBytes();
+						SecretKeySpec keySpec = new SecretKeySpec(key, "Blowfish");
+						Cipher cipher = Cipher.getInstance("Blowfish");
+						cipher.init(Cipher.DECRYPT_MODE, keySpec);
+						decrypted = cipher.doFinal(ordem.getCiphertext());
+					} 
+					catch (javax.crypto.BadPaddingException e) 
+					{
+						continue;
+					}
+					
+					// Verifica se o knowntext existe no texto descriptografado
+					if(bytesContains(decrypted, ordem.getKnowntext()))
+					{
+						// Avisa ao mestre 
+						Guess currentguess = new Guess();
+						currentguess.setKey(palavra);
+						currentguess.setMessage(decrypted);
+						currentguess.setAttackNumber(ordem.getAttackNumber());
+						currentguess.setNomeEscravo(nomeEscravo);
+						ObjectMessage message = context.createObjectMessage(currentguess);
+						producer.send(guesses,message);
+						
+						// Imprime no escravo os índices inicial e final
+						System.err.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] "+i+" "+currentguess.getKey());
+					}
 				}
+				
+				// Fecha o arquivo do dicionario
+				arq.close();
 			}
-			
-			// Fecha o arquivo do dicionario
-			arq.close();
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
+			catch (Exception e)
+			{
+				e.printStackTrace();
+			}
 		}
 		
 		// Imprime no escravo aviso de fim
