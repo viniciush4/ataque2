@@ -1,33 +1,19 @@
 package br.inf.ufes.mestre;
 
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javax.jms.*;
-import javax.json.Json;
-import javax.json.JsonObject;
-import javax.json.JsonObjectBuilder;
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
-
 import com.sun.messaging.ConnectionConfiguration;
-
 import br.inf.ufes.ppd.Guess;
 import br.inf.ufes.ppd.Master;
 import br.inf.ufes.ppd.Ordem;
-import br.inf.ufes.ppd.Slave;
 
 public class MasterImpl implements MessageListener, Master
 {
@@ -58,18 +44,16 @@ public class MasterImpl implements MessageListener, Master
 	{	
 		try
 		{
-			// Se não foi fornecido exatamente um argumento
-			if(args.length < 2) {
-				throw new Exception("Uso: MasterImpl <IP_DESTA_MÁQUINA> <M>");
-			}
+			// Se não foi fornecido exatamente um argumento, lança exceção
+			if(args.length < 2) { throw new Exception("Uso: MasterImpl <IP_DESTA_MÁQUINA> <M>"); }
 
 			// Recebe o host e a quantidade de índices por sub-ataque
 			host = args[0];
 			m = Integer.parseInt(args[1]);
 			
+			// Configura RMI e JMS
 			configurarRMI();
 			configurarJMS();
-			while(true) {}
 		}
 		catch (Exception e) 
 		{
@@ -97,17 +81,16 @@ public class MasterImpl implements MessageListener, Master
 	
 	public static void configurarJMS() throws JMSException, NamingException 
 	{
-		// Initial context factory
+		// Cria e configura a conection factory
 		Logger.getLogger("").setLevel(Level.SEVERE);
-		Hashtable env = new Hashtable();
-		env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.enterprise.naming.SerialInitContextFactory");
-		InitialContext ic = new InitialContext(env);					
-		ConnectionFactory connectionFactory = (ConnectionFactory)ic.lookup("jms/__defaultConnectionFactory");
+		com.sun.messaging.ConnectionFactory connectionFactory = new com.sun.messaging.ConnectionFactory();
+		connectionFactory.setProperty(ConnectionConfiguration.imqAddressList,host+":7676");
+		connectionFactory.setProperty(ConnectionConfiguration.imqConsumerFlowLimitPrefetch,"false");		
 		System.out.println("[master] Resolved connection factory.");
-		
-		// Faz lookup nas filas
-		subAttacks = (Queue)ic.lookup("jms/SubAttacksQueue");
-		guesses = (Queue)ic.lookup("jms/GuessesQueue");
+
+		// Conecta com as filas de sub-ataques e guesses
+		subAttacks = new com.sun.messaging.Queue("SubAttacksQueue");
+		guesses = new com.sun.messaging.Queue("GuessesQueue");
 		System.out.println("[master] Resolved queue.");
 
 		// Cria context, producer e consumer
@@ -152,8 +135,15 @@ public class MasterImpl implements MessageListener, Master
 		producer.send(subAttacks,message);
 		synchronized(attacks) { attacks.get(attack.getAttackNumber()).incrementaSubataquesEmAndamento(); }
 		
-		// Espera até que todos os sub-ataques tenham terminado
-		while(attacks.get(attack.getAttackNumber()).getQuantidadeSubataquesEmAndamento() > 0){}
+		try 
+		{
+			// Dorme até que todos os sub-ataques tenham terminado
+			synchronized(MasterImpl.class) {MasterImpl.class.wait();}
+		} 
+		catch (InterruptedException e) 
+		{
+			e.printStackTrace();
+		}
 		
 		// Converte a lista de guesses em um array
 		Guess[] guesses = new Guess[attacks.get(attack.getAttackNumber()).guesses.size()];
@@ -173,20 +163,35 @@ public class MasterImpl implements MessageListener, Master
 		{
 			if (m instanceof ObjectMessage)
 			{
+				// Objeto guess recebido
 				Guess guess = (Guess)((ObjectMessage) m).getObject();
 				
 				// Coloca o guess na lista do ataque correspondente
 				synchronized(attacks) {attacks.get(guess.getAttackNumber()).guesses.add(guess);}
 				
+				// Imprime aviso de chegada de guess no mestre
 				System.out.println("["+guess.getNomeEscravo()+" #"+guess.getAttackNumber()+"] "+guess.getKey());
 			}
 			if (m instanceof TextMessage)
 			{
 				// Coverte a mensagem em um interio (representa o número do ataque)
 				int attackNumber = Integer.parseInt(((TextMessage) m).getText());
+				int quantidadeSubAttacksEmAndamento;
 				
-				// Decrementa a quantidade de sub-ataques em andamento
-				synchronized(attacks) {attacks.get(attackNumber).decrementaSubataquesEmAndamento();}
+				synchronized(attacks) 
+				{
+					// Decrementa a quantidade de sub-ataques em andamento
+					attacks.get(attackNumber).decrementaSubataquesEmAndamento();
+					
+					quantidadeSubAttacksEmAndamento = attacks.get(attackNumber).getQuantidadeSubataquesEmAndamento();
+				}
+					
+				// Se a quantidade de sub-ataques em andamento chegou a zero
+				if(quantidadeSubAttacksEmAndamento == 0) 
+				{
+					// Acorda a thread do mestre
+					synchronized(MasterImpl.class) {MasterImpl.class.notify();}
+				}
 			}
 		} 
 		catch (JMSException e) 

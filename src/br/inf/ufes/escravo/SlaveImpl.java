@@ -4,71 +4,66 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.rmi.Remote;
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import java.rmi.server.UnicastRemoteObject;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.UUID;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 import javax.jms.*;
-import javax.naming.Context;
-import javax.naming.InitialContext;
 import javax.naming.NamingException;
-
 import com.sun.messaging.ConnectionConfiguration;
-
-import br.inf.ufes.mestre.MasterImpl;
 import br.inf.ufes.ppd.Guess;
-import br.inf.ufes.ppd.Master;
 import br.inf.ufes.ppd.Ordem;
-import br.inf.ufes.ppd.Slave;
 
 public class SlaveImpl implements MessageListener 
 {
 	// Modo Overhead
 	private static boolean overhead;
+	
+	// Host
+	private static String host;
 		
 	// Nome do escravo
 	private static String nomeEscravo;
 
-	// Lista de sub-ataques
+	// Fila de sub-ataques
 	private static Queue subAttacks;
 	private static JMSProducer producer;
 	
-	// Lista de chutes
+	// Fila de chutes
 	private static Queue guesses;
 	private static JMSConsumer consumer;
 	
 	// Contexto JMS
 	private static JMSContext context;
 	
+	// Dicionário
+	private static String[] dicionario;
+	
 	public static void main(String[] args)
 	{
 		try 
 		{
-			// Se não foi fornecido exatamente um argumento
-			if(args.length < 2) {
-				throw new Exception("Uso: SlaveImpl <NOME_ESCRAVO> <HAB_MODO_OVERHEAD? 0-N | 1-S>");
-			}
+			// Se não foi fornecido exatamente um argumento, lança uma exceção
+			if(args.length < 2) { throw new Exception("Uso: SlaveImpl <IP_DO_MESTRE> <NOME_ESCRAVO> <HAB_MODO_OVERHEAD? 0-N | 1-S>");}
+			
+			// Recebe o host
+			host = args[0];
 
-			// Recebe o host e a quantidade de índices por sub-ataque
-			nomeEscravo = args[0];
+			// Recebe o nome do escravo
+			nomeEscravo = args[1];
 			
 			// Guarda preferência do modo overhead
-			overhead = (Integer.parseInt(args[1]) == 1) ? true : false;
+			overhead = (Integer.parseInt(args[2]) == 1) ? true : false;
 			
+			// Configura JMS
 			configurarJMS();
-			while(true) {}
-
+			
+			// Lê o dicionário
+			lerDicionario();
 		} 
 		catch (Exception e) 
 		{
@@ -78,17 +73,16 @@ public class SlaveImpl implements MessageListener
 	
 	public static void configurarJMS() throws JMSException, NamingException 
 	{
-		// Initial context factory
+		// Cria e configura a conection factory
 		Logger.getLogger("").setLevel(Level.SEVERE);
-		Hashtable env = new Hashtable();
-		env.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.enterprise.naming.SerialInitContextFactory");
-		InitialContext ic = new InitialContext(env);		
-		ConnectionFactory connectionFactory = (ConnectionFactory)ic.lookup("jms/__defaultConnectionFactory");
+		com.sun.messaging.ConnectionFactory connectionFactory = new com.sun.messaging.ConnectionFactory();
+		connectionFactory.setProperty(ConnectionConfiguration.imqAddressList,host+":7676");
+		connectionFactory.setProperty(ConnectionConfiguration.imqConsumerFlowLimitPrefetch,"false");
 		System.out.println("["+nomeEscravo+"] Resolved connection factory.");
-		
-		// Faz lookup nas filas
-		subAttacks = (Queue)ic.lookup("jms/SubAttacksQueue");
-		guesses = (Queue)ic.lookup("jms/GuessesQueue");
+
+		// Conecta com as filas de sub-ataques e guesses
+		subAttacks = new com.sun.messaging.Queue("SubAttacksQueue");
+		guesses = new com.sun.messaging.Queue("GuessesQueue");
 		System.out.println("["+nomeEscravo+"] Resolved queue.");
 
 		// Cria context, producer e consumer
@@ -98,6 +92,32 @@ public class SlaveImpl implements MessageListener
 		
 		// Define a classe como ouvidor de mensagens
 		consumer.setMessageListener(new SlaveImpl()); 
+	}
+	
+	public static void lerDicionario()
+	{
+		try 
+		{
+			int tamanhoDicionario = 80368;
+			dicionario = new String[tamanhoDicionario];
+			
+			File arquivo = new File("../dictionary.txt");
+			FileReader arq = new FileReader(arquivo);
+			BufferedReader lerArq = new BufferedReader(arq);
+			
+			// Mantém as palavras do dicionario em memória
+			for(int i=0; i<tamanhoDicionario; i++) 
+			{
+				dicionario[i] = lerArq.readLine();
+			}
+		
+			// Fecha o arquivo do dicionario
+			arq.close();
+		} 
+		catch (IOException e) 
+		{
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -111,11 +131,7 @@ public class SlaveImpl implements MessageListener
 				startSubAttack(ordem);
 			}
 		} 
-		catch (JMSException e) 
-		{
-			e.printStackTrace();
-		}
-		catch (Exception e)
+		catch (Exception e) 
 		{
 			e.printStackTrace();
 		}
@@ -126,63 +142,49 @@ public class SlaveImpl implements MessageListener
 		// Se não estiver em modo overhead
 		if(!overhead) 
 		{
-			try
+			// Imprime os índices inicial e final do sub-ataque
+			System.out.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] índices "+ordem.getIndiceInicial()+" a "+ordem.getIndiceFinal());
+			
+			// Percorre o intervalo solicitado no dicionario
+			for(int i=ordem.getIndiceInicial(); i<=ordem.getIndiceFinal();i++) 
 			{
-				// Imprime os índices inicial e final do sub-ataque
-				System.out.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] índices "+ordem.getIndiceInicial()+" a "+ordem.getIndiceFinal());
+				// Busca a palavra no dicionário
+				String palavra = dicionario[i];
+				byte[] decrypted = null;
 				
-				// Lê o arquivo do dicionário
-				File arquivo = new File("../dictionary.txt");
-				FileReader arq = new FileReader(arquivo);
-				BufferedReader lerArq = new BufferedReader(arq);
-				
-				// Avança até índice inicial
-				for(long i=0;i<ordem.getIndiceInicial();i++) { lerArq.readLine(); }
-				
-				// Percorre o intervalo solicitado no dicionario
-				for(long i=ordem.getIndiceInicial(); i<=ordem.getIndiceFinal();i++) 
+				try
 				{
-					// Lê a palavra candidata
-					String palavra = lerArq.readLine();
-					byte[] decrypted = null;
-					
-					try
-					{
-						// Usa a palavra para descriptografar o ciphertext
-						byte[] key = palavra.getBytes();
-						SecretKeySpec keySpec = new SecretKeySpec(key, "Blowfish");
-						Cipher cipher = Cipher.getInstance("Blowfish");
-						cipher.init(Cipher.DECRYPT_MODE, keySpec);
-						decrypted = cipher.doFinal(ordem.getCiphertext());
-					} 
-					catch (javax.crypto.BadPaddingException e) 
-					{
-						continue;
-					}
-					
-					// Verifica se o knowntext existe no texto descriptografado
-					if(bytesContains(decrypted, ordem.getKnowntext()))
-					{
-						// Avisa ao mestre 
-						Guess currentguess = new Guess();
-						currentguess.setKey(palavra);
-						currentguess.setMessage(decrypted);
-						currentguess.setAttackNumber(ordem.getAttackNumber());
-						currentguess.setNomeEscravo(nomeEscravo);
-						ObjectMessage message = context.createObjectMessage(currentguess);
-						producer.send(guesses,message);
-						
-						// Imprime no escravo os índices inicial e final
-						System.err.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] "+i+" "+currentguess.getKey());
-					}
+					// Usa a palavra para descriptografar o ciphertext
+					byte[] key = palavra.getBytes();
+					SecretKeySpec keySpec = new SecretKeySpec(key, "Blowfish");
+					Cipher cipher = Cipher.getInstance("Blowfish");
+					cipher.init(Cipher.DECRYPT_MODE, keySpec);
+					decrypted = cipher.doFinal(ordem.getCiphertext());
+				} 
+				catch (javax.crypto.BadPaddingException | 
+						NoSuchPaddingException | 
+						NoSuchAlgorithmException | 
+						InvalidKeyException | 
+						IllegalBlockSizeException e) 
+				{
+					continue;
 				}
 				
-				// Fecha o arquivo do dicionario
-				arq.close();
-			}
-			catch (Exception e)
-			{
-				e.printStackTrace();
+				// Verifica se o knowntext existe no texto descriptografado
+				if(bytesContains(decrypted, ordem.getKnowntext()))
+				{
+					// Avisa ao mestre 
+					Guess currentguess = new Guess();
+					currentguess.setKey(palavra);
+					currentguess.setMessage(decrypted);
+					currentguess.setAttackNumber(ordem.getAttackNumber());
+					currentguess.setNomeEscravo(nomeEscravo);
+					ObjectMessage message = context.createObjectMessage(currentguess);
+					producer.send(guesses,message);
+					
+					// Imprime no escravo os índices inicial e final
+					System.err.println("["+nomeEscravo+" #"+ordem.getAttackNumber()+"] "+i+" "+currentguess.getKey());
+				}
 			}
 		}
 		
