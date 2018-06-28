@@ -215,14 +215,14 @@ public class ClienteSequencial
 			//Chama os ataques de acordo com o número de ataques passado na linha de comando
 			for(int i=0; i<numeroDeAtaques; i++)
 			{
-				// Somatorio dos tempos (5 execuções)
+				// Somatorio dos tempos (3 execuções)
 				long somatorioTempos = 0;
 				
 				//Gera um arquivo aleatório
 				mensagem = gerarMensagem(tamanhoVetorGerado);
 				
 				// Faz 5 vezes, para tirar a média
-				for(int j=0; j<5; j++)
+				for(int j=0; j<3; j++)
 				{
 					//Tempo inicial
 					long inicio = System.nanoTime();
@@ -235,7 +235,7 @@ public class ClienteSequencial
 				}
 				
 				//Salvar o tempo (em milissegundos)
-				write.print(tamanhoVetorGerado+";="+(somatorioTempos/5)+"/1000000\n");
+				write.print(tamanhoVetorGerado+";="+(somatorioTempos/3)+"/1000000\n");
 				
 				//Aumenta o tamanho do vetor
 				tamanhoVetorGerado += intervaloVetor;
