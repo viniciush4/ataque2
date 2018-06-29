@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "" 
+echo "Informe: <HOST> <QUANT_ATAQUES> <TAM_INICIAL> <INTERVALO_VET> <QUANT_ESCRAVOS> <MODO_OVERHEAD? 0 / 1>"
+read HOST QUANT TAM_VET_INI INTERVALO_VET QUANT_ESC OVERHEAD
+cd ./bin
+java br/inf/ufes/cliente/ClienteEspecial "$HOST" "$QUANT" "$TAM_VET_INI" "$INTERVALO_VET" "$QUANT_ESC" "$OVERHEAD"
+
+
+
