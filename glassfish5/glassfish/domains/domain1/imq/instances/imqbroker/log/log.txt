@@ -6085,3 +6085,427 @@ Java Runtime: 1.8.0_161 Oracle Corporation /opt/jdk1.8.0_161/jre
 |#]
 
 
+[#|2018-07-04T17:48:48.044-0300|WARNING|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[S2004]: Log output channel com.sun.messaging.jmq.util.log.SysLogHandler is disabled: no imqutil in java.library.path|#]
+
+
+[#|2018-07-04T17:48:48.069-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|
+================================================================================
+Message Queue 5.1.1
+Oracle
+Version:  5.1.1  (Build 6-a)
+Compile:  August 17 2017 1649
+
+Copyright (c) 2013, Oracle and/or its affiliates.  All rights reserved.
+================================================================================
+Java Runtime: 1.8.0_161 Oracle Corporation /opt/jdk1.8.0_161/jre
+|#]
+
+
+[#|2018-07-04T17:48:48.107-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|   IMQ_HOME=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/mq
+|#]
+
+
+[#|2018-07-04T17:48:48.108-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|IMQ_VARHOME=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/imq
+|#]
+
+
+[#|2018-07-04T17:48:48.108-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|Linux 4.4.0-130-generic amd64 vinicius (2 cpu) vinicius
+|#]
+
+
+[#|2018-07-04T17:48:48.110-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|Java Heap Size: max=466432k, current=252928k
+|#]
+
+
+[#|2018-07-04T17:48:48.111-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|Arguments: -port 7676 -name imqbroker -nobind -imqhome /home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/mq -varhome /home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/imq -libhome /home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/mq/lib -useRmiRegistry -rmiRegistryPort 8686 -save -silent
+|#]
+
+
+[#|2018-07-04T17:48:48.112-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|JMSRA BrokerProps: imq.cluster.dynamicChangeMasterBrokerEnabled=true, imq.service.activate=jmsdirect, imq.imqcmd.password=*****, imq.jmsra.managed=true, imq.cluster.nowaitForMasterBroker=true
+|#]
+
+
+[#|2018-07-04T17:48:48.112-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|Broker Properties: imq.service.activate=jmsdirect, imq.cluster.nowaitForMasterBroker=true, imq.jmx.rmiregistry.use=true, imq.portmapper.port=7676, imq.jmsra.managed=true, imq.instancename=imqbroker, java.util.logging.ConsoleHandler.level=OFF, imq.imqcmd.password=*****, imq.jmx.rmiregistry.port=8686, imq.service.runtimeAdd=mqdirect2, imq.cluster.dynamicChangeMasterBrokerEnabled=true, imq.jmx.rmiregistry.start=false, imq.portmapper.bind=false
+|#]
+
+
+[#|2018-07-04T17:48:48.113-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|Embedded Broker 
+|#]
+
+
+[#|2018-07-04T17:48:48.141-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1522]: Create thread pool portmapper for (2, 2)(60s) service
+|#]
+
+
+[#|2018-07-04T17:48:48.172-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|imq.persist.minimizeWrites=true
+|#]
+
+
+[#|2018-07-04T17:48:48.172-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|imq.persist.file.minimizeWrites=false
+|#]
+
+
+[#|2018-07-04T17:48:48.200-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1060]: Loading persistent data...
+|#]
+
+
+[#|2018-07-04T17:48:48.201-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|Using built-in file-based persistent store: /home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/imq/instances/imqbroker/
+|#]
+
+
+[#|2018-07-04T17:48:49.413-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B2219]: Broker property setting imq.persist.minimizeWritesLevel2=true will be ignored
+|#]
+
+
+[#|2018-07-04T17:48:49.453-0300|WARNING|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|WARNING [B3168]: Invalid broker address for this broker to run in cluster: Loopback IP address is not allowed in broker address mq://127.0.1.1:7676/?instName=imqbroker&brokerSessionUID=6515411679700852736&ha=false for cluster
+|#]
+
+
+[#|2018-07-04T17:48:49.455-0300|WARNING|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|WARNING [B1137]: Cluster initialization failed. Disabling the cluster service.
+|#]
+
+
+[#|2018-07-04T17:48:49.466-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1013]: Auto Creation of Queues is enabled
+|#]
+
+
+[#|2018-07-04T17:48:49.551-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|new transaction log enabled
+|#]
+
+
+[#|2018-07-04T17:48:49.551-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|sync writes to disk = false
+|#]
+
+
+[#|2018-07-04T17:48:49.553-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|logNonTransactedMsgSend = false
+|#]
+
+
+[#|2018-07-04T17:48:49.553-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|logNonTransactedMsgAck = false
+|#]
+
+
+[#|2018-07-04T17:48:49.559-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1392]: Opening transaction log with file mode rw, maximum size 10.485.760 bytes
+|#]
+
+
+[#|2018-07-04T17:48:49.568-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1270]: Processing messages from transaction log file...
+|#]
+
+
+[#|2018-07-04T17:48:49.582-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1434]: Retrieving stored destinations
+|#]
+
+
+[#|2018-07-04T17:48:49.633-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1503]: Retrieved 3 destinations from store
+|#]
+
+
+[#|2018-07-04T17:48:49.734-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1517]: Destroying destination SubAttacksQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T17:48:49.734-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1151]: Loading destination SubAttacksQueue [Queue] with 0 messages
+|#]
+
+
+[#|2018-07-04T17:48:49.738-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1152]: Loading of destination SubAttacksQueue [Queue] complete
+|#]
+
+
+[#|2018-07-04T17:48:49.739-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1387]: Purged 0 messages from destination SubAttacksQueue [Queue]
+|#]
+
+
+[#|2018-07-04T17:48:49.828-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1159]: Destination SubAttacksQueue [Queue] has been destroyed
+|#]
+
+
+[#|2018-07-04T17:48:49.867-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1517]: Destroying destination GuessesQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T17:48:49.875-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1151]: Loading destination GuessesQueue [Queue] with 0 messages
+|#]
+
+
+[#|2018-07-04T17:48:49.875-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1152]: Loading of destination GuessesQueue [Queue] complete
+|#]
+
+
+[#|2018-07-04T17:48:49.876-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1387]: Purged 0 messages from destination GuessesQueue [Queue]
+|#]
+
+
+[#|2018-07-04T17:48:49.913-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1159]: Destination GuessesQueue [Queue] has been destroyed
+|#]
+
+
+[#|2018-07-04T17:48:49.914-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1151]: Loading destination mq.sys.dmq [Queue] with 0 messages
+|#]
+
+
+[#|2018-07-04T17:48:49.915-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1152]: Loading of destination mq.sys.dmq [Queue] complete
+|#]
+
+
+[#|2018-07-04T17:48:49.932-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1136]: Processing stored transactions
+|#]
+
+
+[#|2018-07-04T17:48:49.933-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1390]: Loading of transactions has been successfully completed
+|#]
+
+
+[#|2018-07-04T17:48:49.967-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1239]: Using platform MBean server
+|#]
+
+
+[#|2018-07-04T17:48:50.011-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1234]: JMX Connector Server jmxrmi started successfully with url service:jmx:rmi://vinicius/jndi/rmi://vinicius:8686/vinicius/7676/jmxrmi
+|#]
+
+
+[#|2018-07-04T17:48:50.220-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1004]: Starting the admin service using tcp(host = *, port=0, mode=dedicated) with min threads 4 and max threads of 10 
+|#]
+
+
+[#|2018-07-04T17:48:50.220-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1227]: Using file user repository for admin service connection authentication
+|#]
+
+
+[#|2018-07-04T17:48:50.247-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1004]: Starting the jms service using tcp(host = *, port=0, mode=dedicated) with min threads 10 and max threads of 1000 
+|#]
+
+
+[#|2018-07-04T17:48:50.247-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1227]: Using file user repository for jms service connection authentication
+|#]
+
+
+[#|2018-07-04T17:48:50.252-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1004]: Starting the mqdirect2 service using in-process connections with min threads 0 and max threads of 0 
+|#]
+
+
+[#|2018-07-04T17:48:50.252-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1227]: Using file user repository for mqdirect2 service connection authentication
+|#]
+
+
+[#|2018-07-04T17:48:50.256-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1004]: Starting the jmsdirect service using  with min threads 0 and max threads of 0 
+|#]
+
+
+[#|2018-07-04T17:48:50.257-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1227]: Using file user repository for jmsdirect service connection authentication
+|#]
+
+
+[#|2018-07-04T17:48:50.278-0300|FORCE|5.1.1|imq.log.Logger|_ThreadID=66;_ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner;|[B1039]: Broker "imqbroker@vinicius:7676" ready.
+|#]
+
+
+[#|2018-07-04T17:48:50.822-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1065]: Accepting: guest@127.0.0.1:43292->jms:36923. Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T17:48:50.943-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1132]: Auto-creating destination GuessesQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T17:49:11.497-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1065]: Accepting: guest@127.0.0.1:43296->jms:36923. Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T17:49:11.577-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1132]: Auto-creating destination SubAttacksQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T17:53:03.838-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1066]:   Closing: guest@127.0.0.1:43296->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T17:53:06.244-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1066]:   Closing: guest@127.0.0.1:43292->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=0 broker=0
+|#]
+
+
+[#|2018-07-04T17:53:18.423-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1065]: Accepting: guest@127.0.0.1:43318->jms:36923. Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T17:53:33.412-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1065]: Accepting: guest@127.0.0.1:43322->jms:36923. Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T19:23:17.806-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1066]:   Closing: guest@127.0.0.1:43318->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T19:23:20.248-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1066]:   Closing: guest@127.0.0.1:43322->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=0 broker=0
+|#]
+
+
+[#|2018-07-04T19:23:34.872-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1065]: Accepting: guest@127.0.0.1:43672->jms:36923. Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T19:23:51.244-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1065]: Accepting: guest@127.0.0.1:43680->jms:36923. Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T19:24:18.389-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1065]: Accepting: guest@127.0.0.1:43684->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T19:36:09.351-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1066]:   Closing: guest@127.0.0.1:43672->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T19:36:11.179-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1066]:   Closing: guest@127.0.0.1:43680->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T19:36:18.440-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1066]:   Closing: guest@127.0.0.1:43684->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=0 broker=0
+|#]
+
+
+[#|2018-07-04T19:36:28.645-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1065]: Accepting: guest@127.0.0.1:43772->jms:36923. Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T19:36:42.361-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1065]: Accepting: guest@127.0.0.1:43776->jms:36923. Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T19:36:54.077-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=108;_ThreadName=Thread-jms[3];|[B1065]: Accepting: guest@127.0.0.1:43780->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T19:37:32.873-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1066]:   Closing: guest@127.0.0.1:43772->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T19:37:40.100-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1065]: Accepting: guest@127.0.0.1:43792->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T19:38:10.367-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1066]:   Closing: guest@127.0.0.1:43792->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T19:39:22.236-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1065]: Accepting: guest@127.0.0.1:43824->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T19:46:41.181-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1066]:   Closing: guest@127.0.0.1:43824->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T19:46:43.474-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1066]:   Closing: guest@127.0.0.1:43776->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T19:46:45.850-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=108;_ThreadName=Thread-jms[3];|[B1066]:   Closing: guest@127.0.0.1:43780->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=0 broker=0
+|#]
+
+
+[#|2018-07-04T19:48:45.848-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1130]: Destroying auto-created destination GuessesQueue [Queue] inactive for 120 seconds
+|#]
+
+
+[#|2018-07-04T19:48:45.850-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1517]: Destroying destination GuessesQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T19:48:45.851-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1387]: Purged 0 messages from destination GuessesQueue [Queue]
+|#]
+
+
+[#|2018-07-04T19:48:45.894-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1159]: Destination GuessesQueue [Queue] has been destroyed
+|#]
+
+
+[#|2018-07-04T19:48:45.895-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1130]: Destroying auto-created destination SubAttacksQueue [Queue] inactive for 120 seconds
+|#]
+
+
+[#|2018-07-04T19:48:45.896-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1517]: Destroying destination SubAttacksQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T19:48:45.896-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1387]: Purged 0 messages from destination SubAttacksQueue [Queue]
+|#]
+
+
+[#|2018-07-04T19:48:45.928-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1159]: Destination SubAttacksQueue [Queue] has been destroyed
+|#]
+
+
+[#|2018-07-04T19:50:45.111-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=108;_ThreadName=Thread-jms[3];|[B1065]: Accepting: guest@127.0.0.1:43878->jms:36923. Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T19:50:45.192-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=108;_ThreadName=Thread-jms[3];|[B1132]: Auto-creating destination GuessesQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T19:50:55.665-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1065]: Accepting: guest@127.0.0.1:43882->jms:36923. Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T19:50:55.744-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1132]: Auto-creating destination SubAttacksQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T19:51:07.739-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1065]: Accepting: guest@127.0.0.1:43886->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T19:51:44.164-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=108;_ThreadName=Thread-jms[3];|[B1066]:   Closing: guest@127.0.0.1:43878->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T19:52:34.807-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=108;_ThreadName=Thread-jms[3];|[B1065]: Accepting: guest@127.0.0.1:43912->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T19:53:15.444-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1066]:   Closing: guest@127.0.0.1:43882->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T19:53:17.360-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=108;_ThreadName=Thread-jms[3];|[B1066]:   Closing: guest@127.0.0.1:43912->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T19:53:19.518-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1066]:   Closing: guest@127.0.0.1:43886->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=0 broker=0
+|#]
+
+
+[#|2018-07-04T19:55:19.516-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1130]: Destroying auto-created destination GuessesQueue [Queue] inactive for 120 seconds
+|#]
+
+
+[#|2018-07-04T19:55:19.517-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1517]: Destroying destination GuessesQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T19:55:19.518-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1387]: Purged 0 messages from destination GuessesQueue [Queue]
+|#]
+
+
+[#|2018-07-04T19:55:19.695-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1159]: Destination GuessesQueue [Queue] has been destroyed
+|#]
+
+
+[#|2018-07-04T19:55:19.697-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1130]: Destroying auto-created destination SubAttacksQueue [Queue] inactive for 120 seconds
+|#]
+
+
+[#|2018-07-04T19:55:19.697-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1517]: Destroying destination SubAttacksQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T19:55:19.698-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1387]: Purged 0 messages from destination SubAttacksQueue [Queue]
+|#]
+
+
+[#|2018-07-04T19:55:19.729-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1159]: Destination SubAttacksQueue [Queue] has been destroyed
+|#]
+
+

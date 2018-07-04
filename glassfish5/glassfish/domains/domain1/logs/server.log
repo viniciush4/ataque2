@@ -2956,3 +2956,542 @@ com.sun.enterprise.admin.cli.AdminMain]]
 [2018-06-28T20:50:52.705-0300] [glassfish 5.0] [INFO] [] [javax.resourceadapter.mqjmsra.lifecycle] [tid: _ThreadID=63 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530229852705] [levelValue: 800] [[
   MQJMSRA_RA1101: GlassFish MQ JMS Resource Adapter Started:EMBEDDED]]
 
+[2018-07-04T17:48:00.001-0300] [] [INFO] [NCLS-GFLAUNCHER-00005] [javax.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1530737280001] [levelValue: 800] [[
+  JVM invocation command line:
+/opt/jdk1.8.0_161/bin/java
+-cp
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/glassfish.jar
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-XX:MaxPermSize=192m
+-Xmx512m
+-javaagent:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/monitor/flashlight-agent.jar
+-client
+-Djavax.xml.accessExternalSchema=all
+-Djavax.net.ssl.trustStore=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/cacerts.jks
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Dfelix.fileinstall.dir=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/autostart/
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dcom.sun.aas.installRoot=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish
+-Dfelix.fileinstall.poll=5000
+-Djava.endorsed.dirs=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/endorsed:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/endorsed
+-Djava.security.policy=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/server.policy
+-Dosgi.shell.telnet.maxconn=1
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dfelix.fileinstall.log.level=2
+-Djavax.net.ssl.keyStore=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/keystore.jks
+-Djava.security.auth.login.config=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/login.conf
+-Dfelix.fileinstall.disableConfigSave=false
+-Dfelix.fileinstall.bundles.new.start=true
+-Dcom.sun.aas.instanceRoot=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1
+-Dosgi.shell.telnet.port=6666
+-Dgosh.args=--nointeractive
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Dosgi.shell.telnet.ip=127.0.0.1
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Djava.awt.headless=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djava.ext.dirs=/opt/jdk1.8.0_161/lib/ext:/opt/jdk1.8.0_161/jre/lib/ext:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/lib/ext
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-Djava.library.path=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2018-07-04T17:48:08.689-0300] [glassfish 5.0] [INFO] [NCLS-LOGGING-00009] [javax.enterprise.logging] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1530737288229] [timeMillis: 1530737288689] [levelValue: 800] [[
+  Running GlassFish Version: GlassFish Server Open Source Edition  5.0  (build 25)]]
+
+[2018-07-04T17:48:08.693-0300] [glassfish 5.0] [INFO] [NCLS-LOGGING-00010] [javax.enterprise.logging] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1530737288229] [timeMillis: 1530737288693] [levelValue: 800] [[
+  Server log file is using Formatter class: com.sun.enterprise.server.logging.ODLLogFormatter]]
+
+[2018-07-04T17:48:09.065-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=21 _ThreadName=RunLevelControllerThread-1530737288261] [timeMillis: 1530737289065] [levelValue: 800] [[
+  Realm [admin-realm] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2018-07-04T17:48:09.085-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=21 _ThreadName=RunLevelControllerThread-1530737288261] [timeMillis: 1530737289085] [levelValue: 800] [[
+  Realm [file] of classtype [com.sun.enterprise.security.auth.realm.file.FileRealm] successfully created.]]
+
+[2018-07-04T17:48:09.100-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01115] [javax.enterprise.system.core.security] [tid: _ThreadID=21 _ThreadName=RunLevelControllerThread-1530737288261] [timeMillis: 1530737289100] [levelValue: 800] [[
+  Realm [certificate] of classtype [com.sun.enterprise.security.auth.realm.certificate.CertificateRealm] successfully created.]]
+
+[2018-07-04T17:48:10.310-0300] [glassfish 5.0] [INFO] [SEC-SVCS-00100] [javax.enterprise.security.services] [tid: _ThreadID=27 _ThreadName=RunLevelControllerThread-1530737289318] [timeMillis: 1530737290310] [levelValue: 800] [[
+  Authorization Service has successfully initialized.]]
+
+[2018-07-04T17:48:11.156-0300] [glassfish 5.0] [INFO] [] [org.glassfish.ha.store.spi.BackingStoreFactoryRegistry] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1530737288229] [timeMillis: 1530737291156] [levelValue: 800] [[
+  Registered org.glassfish.ha.store.adapter.cache.ShoalBackingStoreProxy for persistence-type = replicated in BackingStoreFactoryRegistry]]
+
+[2018-07-04T17:48:11.499-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1530737288225] [timeMillis: 1530737291499] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 54ms - bound to [/0.0.0.0:8080]]]
+
+[2018-07-04T17:48:11.565-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1530737288225] [timeMillis: 1530737291565] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 3ms - bound to [/0.0.0.0:8181]]]
+
+[2018-07-04T17:48:11.585-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=19 _ThreadName=RunLevelControllerThread-1530737288225] [timeMillis: 1530737291585] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 2ms - bound to [/0.0.0.0:4848]]]
+
+[2018-07-04T17:48:11.706-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=27 _ThreadName=RunLevelControllerThread-1530737289318] [timeMillis: 1530737291706] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 2ms - bound to [/0.0.0.0:3700]]]
+
+[2018-07-04T17:48:11.709-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00017] [javax.enterprise.system.core] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1530737291709] [levelValue: 800] [[
+  GlassFish Server Open Source Edition  5.0  (25) startup time : Felix (7.487ms), startup services(3.503ms), total(10.990ms)]]
+
+[2018-07-04T17:48:12.239-0300] [glassfish 5.0] [INFO] [jts.startup_msg] [javax.enterprise.system.core.transaction.com.sun.jts.CosTransactions] [tid: _ThreadID=27 _ThreadName=RunLevelControllerThread-1530737289318] [timeMillis: 1530737292239] [levelValue: 800] [[
+  JTS5014: Recoverable JTS instance, serverId = [100]]]
+
+[2018-07-04T17:48:12.935-0300] [glassfish 5.0] [INFO] [NCLS-JMX-00005] [javax.enterprise.system.jmx] [tid: _ThreadID=54 _ThreadName=Thread-14] [timeMillis: 1530737292935] [levelValue: 800] [[
+  JMXStartupService has started JMXConnector on JMXService URL service:jmx:rmi://vinicius:8686/jndi/rmi://vinicius:8686/jmxrmi]]
+
+[2018-07-04T17:48:12.979-0300] [glassfish 5.0] [INFO] [NCLS-CORE-00087] [javax.enterprise.system.core] [tid: _ThreadID=20 _ThreadName=RunLevelControllerThread-1530737288229] [timeMillis: 1530737292979] [levelValue: 800] [[
+  Grizzly Framework 2.4.1 started in: 13ms - bound to [/0.0.0.0:7676]]]
+
+[2018-07-04T17:48:17.959-0300] [glassfish 5.0] [INFO] [NCLS-REST-00001] [javax.enterprise.admin.rest] [tid: _ThreadID=48 _ThreadName=admin-listener(4)] [timeMillis: 1530737297959] [levelValue: 800] [[
+  Listening to REST requests at context: /command/domain.]]
+
+[2018-07-04T17:48:18.552-0300] [glassfish 5.0] [INFO] [] [org.hibernate.validator.internal.util.Version] [tid: _ThreadID=48 _ThreadName=admin-listener(4)] [timeMillis: 1530737298552] [levelValue: 800] [[
+  HV000001: Hibernate Validator 6.0.2.Final]]
+
+[2018-07-04T17:48:21.690-0300] [glassfish 5.0] [INFO] [NCLS-REST-00001] [javax.enterprise.admin.rest] [tid: _ThreadID=45 _ThreadName=admin-listener(1)] [timeMillis: 1530737301690] [levelValue: 800] [[
+  Listening to REST requests at context: /management/domain.]]
+
+[2018-07-04T17:48:21.875-0300] [glassfish 5.0] [INFO] [NCLS-BOOTSTRAP-00027] [javax.enterprise.bootstrap] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1530737301875] [levelValue: 800] [[
+  Registered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@285583d4 as OSGi service registration: org.apache.felix.framework.ServiceRegistrationImpl@5a90265a.]]
+
+[2018-07-04T17:48:23.579-0300] [glassfish 5.0] [INFO] [] [] [tid: _ThreadID=16 _ThreadName=Thread-9] [timeMillis: 1530737303579] [levelValue: 800] [[
+  /home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/autodeploy/bundles does not exist, please create it.]]
+
+[2018-07-04T17:48:23.717-0300] [glassfish 5.0] [INFO] [] [javax.enterprise.system.tools.deployment.common] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737303717] [levelValue: 800] [[
+  visiting unvisited references]]
+
+[2018-07-04T17:48:25.706-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737305706] [levelValue: 800] [[
+  Created HTTP listener http-listener-1 on host/port 0.0.0.0:8080]]
+
+[2018-07-04T17:48:25.720-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737305720] [levelValue: 800] [[
+  Created HTTP listener http-listener-2 on host/port 0.0.0.0:8181]]
+
+[2018-07-04T17:48:25.726-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00198] [javax.enterprise.web] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737305726] [levelValue: 800] [[
+  Created HTTP listener admin-listener on host/port 0.0.0.0:4848]]
+
+[2018-07-04T17:48:25.775-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737305775] [levelValue: 800] [[
+  Created virtual server server]]
+
+[2018-07-04T17:48:25.782-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00200] [javax.enterprise.web] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737305782] [levelValue: 800] [[
+  Created virtual server __asadmin]]
+
+[2018-07-04T17:48:26.247-0300] [glassfish 5.0] [INFO] [AS-WEB-CORE-00306] [javax.enterprise.web.core] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737306247] [levelValue: 800] [[
+  Setting JAAS app name glassfish-web]]
+
+[2018-07-04T17:48:26.253-0300] [glassfish 5.0] [INFO] [AS-WEB-GLUE-00201] [javax.enterprise.web] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737306253] [levelValue: 800] [[
+  Virtual server server loaded default web module ]]
+
+[2018-07-04T17:48:27.096-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01002] [javax.enterprise.system.core.security] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737307096] [levelValue: 800] [[
+  Java security manager is disabled.]]
+
+[2018-07-04T17:48:27.097-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01010] [javax.enterprise.system.core.security] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737307097] [levelValue: 800] [[
+  Entering Security Startup Service.]]
+
+[2018-07-04T17:48:27.107-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01143] [javax.enterprise.system.core.security] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737307107] [levelValue: 800] [[
+  Loading policy provider com.sun.enterprise.security.provider.PolicyWrapper.]]
+
+[2018-07-04T17:48:27.212-0300] [glassfish 5.0] [INFO] [NCLS-SECURITY-01011] [javax.enterprise.system.core.security] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737307212] [levelValue: 800] [[
+  Security Service(s) started successfully.]]
+
+[2018-07-04T17:48:28.290-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737308290] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:28.292-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737308292] [levelValue: 1000] [[
+  enterprise.deployment.backend.saxParserError]]
+
+[2018-07-04T17:48:28.294-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.core] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737308294] [levelValue: 1000] [[
+  Exception while deploying the app [__admingui]]]
+
+[2018-07-04T17:48:28.297-0300] [glassfish 5.0] [SEVERE] [NCLS-CORE-00026] [javax.enterprise.system.core] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737308297] [levelValue: 1000] [[
+  Exception during lifecycle processing
+java.io.IOException: org.xml.sax.SAXParseExceptionpublicId: file:/home/vinicius/Área%20de%20Trabalho/PROCESSAMENTO%20PARALELO%20E%20DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/schemas/web-app_3_0.xsd; lineNumber: 116; columnNumber: 42; Deployment descriptor file WEB-INF/web.xml in archive [__admingui].  src-resolve: Não é possível resolver o nome 'javaee:web-appType' para um componente 'type definition'.
+	at org.glassfish.javaee.core.deployment.DolProvider.processDOL(DolProvider.java:215)
+	at org.glassfish.javaee.core.deployment.DolProvider.load(DolProvider.java:231)
+	at org.glassfish.javaee.core.deployment.DolProvider.load(DolProvider.java:97)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.loadDeployer(ApplicationLifecycle.java:881)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.setupContainerInfos(ApplicationLifecycle.java:821)
+	at com.sun.enterprise.v3.server.ApplicationLifecycle.deploy(ApplicationLifecycle.java:378)
+	at com.sun.enterprise.v3.server.ApplicationLoaderService.processApplication(ApplicationLoaderService.java:406)
+	at com.sun.enterprise.v3.admin.adapter.InstallerThread.load(InstallerThread.java:211)
+	at com.sun.enterprise.v3.admin.adapter.InstallerThread.run(InstallerThread.java:100)
+Caused by: org.xml.sax.SAXParseExceptionpublicId: file:/home/vinicius/Área%20de%20Trabalho/PROCESSAMENTO%20PARALELO%20E%20DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/schemas/web-app_3_0.xsd; lineNumber: 116; columnNumber: 42; Deployment descriptor file WEB-INF/web.xml in archive [__admingui].  src-resolve: Não é possível resolver o nome 'javaee:web-appType' para um componente 'type definition'.
+	at com.sun.enterprise.deployment.io.DeploymentDescriptorFile.read(DeploymentDescriptorFile.java:328)
+	at com.sun.enterprise.deployment.io.DeploymentDescriptorFile.read(DeploymentDescriptorFile.java:245)
+	at com.sun.enterprise.deployment.archivist.Archivist.readStandardDeploymentDescriptor(Archivist.java:679)
+	at com.sun.enterprise.deployment.archivist.Archivist.readDeploymentDescriptors(Archivist.java:391)
+	at com.sun.enterprise.deployment.archivist.Archivist.open(Archivist.java:271)
+	at com.sun.enterprise.deployment.archivist.Archivist.open(Archivist.java:280)
+	at com.sun.enterprise.deployment.archivist.Archivist.open(Archivist.java:241)
+	at com.sun.enterprise.deployment.archivist.ApplicationFactory.openArchive(ApplicationFactory.java:161)
+	at org.glassfish.javaee.core.deployment.DolProvider.processDOL(DolProvider.java:207)
+	... 8 more
+Caused by: org.xml.sax.SAXParseException; systemId: file:/home/vinicius/Área%20de%20Trabalho/PROCESSAMENTO%20PARALELO%20E%20DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/schemas/web-app_3_0.xsd; lineNumber: 116; columnNumber: 42; src-resolve: Não é possível resolver o nome 'javaee:web-appType' para um componente 'type definition'.
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.createSAXParseException(ErrorHandlerWrapper.java:203)
+	at com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper.error(ErrorHandlerWrapper.java:134)
+	at com.sun.org.apache.xerces.internal.impl.XMLErrorReporter.reportError(XMLErrorReporter.java:396)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.reportSchemaErr(XSDHandler.java:4154)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.reportSchemaError(XSDHandler.java:4137)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.getGlobalDecl(XSDHandler.java:1747)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDElementTraverser.traverseNamedElement(XSDElementTraverser.java:405)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDElementTraverser.traverseGlobal(XSDElementTraverser.java:242)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.traverseSchemas(XSDHandler.java:1439)
+	at com.sun.org.apache.xerces.internal.impl.xs.traversers.XSDHandler.parseSchema(XSDHandler.java:635)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaLoader.loadSchema(XMLSchemaLoader.java:610)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.findSchemaGrammar(XMLSchemaValidator.java:2447)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.handleStartElement(XMLSchemaValidator.java:1768)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.startElement(XMLSchemaValidator.java:741)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:374)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl$NSContentDriver.scanRootElementHook(XMLNSDocumentScannerImpl.java:613)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:3132)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl$PrologDriver.next(XMLDocumentScannerImpl.java:852)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:602)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:112)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:505)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:842)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:771)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:141)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1213)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:643)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl.parse(SAXParserImpl.java:327)
+	at com.sun.enterprise.deployment.io.DeploymentDescriptorFile.read(DeploymentDescriptorFile.java:318)
+	... 16 more
+]]
+
+[2018-07-04T17:48:28.372-0300] [glassfish 5.0] [SEVERE] [NCLS-CORE-00041] [javax.enterprise.system.core] [tid: _ThreadID=78 _ThreadName=Thread-20] [timeMillis: 1530737308372] [levelValue: 1000] [[
+  Application deployment failed: Exception while deploying the app [__admingui]]]
+
+[2018-07-04T17:48:46.760-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326760] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.764-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326764] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.765-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326765] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.771-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326771] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.773-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326773] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.781-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326781] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.784-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326784] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.785-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326785] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.786-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326786] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.787-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326787] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.788-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326788] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.800-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326800] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.801-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326801] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.802-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326802] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.803-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326803] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.804-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326804] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.805-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326805] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.810-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326810] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.812-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326812] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.813-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326813] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.818-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326818] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.819-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326819] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.838-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326838] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.839-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326839] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.846-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326846] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.848-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326848] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.849-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326849] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.850-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326850] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.855-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326855] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.856-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326856] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.877-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326877] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.935-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326935] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.956-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326956] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.967-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326967] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:46.980-0300] [glassfish 5.0] [SEVERE] [] [javax.enterprise.system.tools.deployment.dol] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737326980] [levelValue: 1000] [[
+  enterprise.deployment.backend.invalidDescriptorFailure]]
+
+[2018-07-04T17:48:47.286-0300] [glassfish 5.0] [INFO] [AS-JMS-CORE-00002] [javax.enterprise.resource.jms] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737327286] [levelValue: 800] [[
+  ADDRESSLIST in setJmsServiceProvider : mq://localhost:7676/]]
+
+[2018-07-04T17:48:47.294-0300] [glassfish 5.0] [INFO] [AS-JMS-CORE-00001] [javax.enterprise.resource.jms] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737327294] [levelValue: 800] [[
+  JMS Service Connection URL is : mq://localhost:7676/]]
+
+[2018-07-04T17:48:47.618-0300] [glassfish 5.0] [INFO] [] [javax.resourceadapter.mqjmsra.lifecycle] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737327618] [levelValue: 800] [[
+  MQJMSRA_RA1101: GlassFish MQ JMS Resource Adapter: Version:  5.1.1  (Build 6-a) Compile:  August 17 2017 1649]]
+
+[2018-07-04T17:48:47.620-0300] [glassfish 5.0] [INFO] [] [javax.resourceadapter.mqjmsra.lifecycle] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737327620] [levelValue: 800] [[
+  MQJMSRA_RA1101: GlassFish MQ JMS Resource Adapter starting: broker is EMBEDDED, connection mode is Direct]]
+
+[2018-07-04T17:48:50.416-0300] [glassfish 5.0] [INFO] [] [javax.resourceadapter.mqjmsra.lifecycle] [tid: _ThreadID=66 _ThreadName=JMS_PROXY_default_JMS_host-kernel(1) SelectorRunner] [timeMillis: 1530737330416] [levelValue: 800] [[
+  MQJMSRA_RA1101: GlassFish MQ JMS Resource Adapter Started:EMBEDDED]]
+
+[2018-07-04T19:38:14.947-0300] [] [INFO] [NCLS-GFLAUNCHER-00005] [javax.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1530743894947] [levelValue: 800] [[
+  JVM invocation command line:
+/opt/jdk1.8.0_161/bin/java
+-cp
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/glassfish.jar
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-XX:MaxPermSize=192m
+-Xmx512m
+-javaagent:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/monitor/flashlight-agent.jar
+-client
+-Djavax.xml.accessExternalSchema=all
+-Djavax.net.ssl.trustStore=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/cacerts.jks
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Dfelix.fileinstall.dir=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/autostart/
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dcom.sun.aas.installRoot=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish
+-Dfelix.fileinstall.poll=5000
+-Djava.endorsed.dirs=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/endorsed:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/endorsed
+-Djava.security.policy=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/server.policy
+-Dosgi.shell.telnet.maxconn=1
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dfelix.fileinstall.log.level=2
+-Djavax.net.ssl.keyStore=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/keystore.jks
+-Djava.security.auth.login.config=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/login.conf
+-Dfelix.fileinstall.disableConfigSave=false
+-Dfelix.fileinstall.bundles.new.start=true
+-Dcom.sun.aas.instanceRoot=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1
+-Dosgi.shell.telnet.port=6666
+-Dgosh.args=--nointeractive
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Dosgi.shell.telnet.ip=127.0.0.1
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Djava.awt.headless=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djava.ext.dirs=/opt/jdk1.8.0_161/lib/ext:/opt/jdk1.8.0_161/jre/lib/ext:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/lib/ext
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-Djava.library.path=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2018-07-04T19:38:58.241-0300] [] [INFO] [NCLS-GFLAUNCHER-00005] [javax.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1530743938241] [levelValue: 800] [[
+  JVM invocation command line:
+/opt/jdk1.8.0_161/bin/java
+-cp
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/glassfish.jar
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-XX:MaxPermSize=192m
+-Xmx512m
+-javaagent:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/monitor/flashlight-agent.jar
+-client
+-Djavax.xml.accessExternalSchema=all
+-Djavax.net.ssl.trustStore=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/cacerts.jks
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Dfelix.fileinstall.dir=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/autostart/
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dcom.sun.aas.installRoot=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish
+-Dfelix.fileinstall.poll=5000
+-Djava.endorsed.dirs=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/endorsed:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/endorsed
+-Djava.security.policy=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/server.policy
+-Dosgi.shell.telnet.maxconn=1
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dfelix.fileinstall.log.level=2
+-Djavax.net.ssl.keyStore=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/keystore.jks
+-Djava.security.auth.login.config=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/login.conf
+-Dfelix.fileinstall.disableConfigSave=false
+-Dfelix.fileinstall.bundles.new.start=true
+-Dcom.sun.aas.instanceRoot=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1
+-Dosgi.shell.telnet.port=6666
+-Dgosh.args=--nointeractive
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Dosgi.shell.telnet.ip=127.0.0.1
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Djava.awt.headless=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djava.ext.dirs=/opt/jdk1.8.0_161/lib/ext:/opt/jdk1.8.0_161/jre/lib/ext:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/lib/ext
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-Djava.library.path=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
+[2018-07-04T19:52:23.657-0300] [] [INFO] [NCLS-GFLAUNCHER-00005] [javax.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1530744743657] [levelValue: 800] [[
+  JVM invocation command line:
+/opt/jdk1.8.0_161/bin/java
+-cp
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/glassfish.jar
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-XX:MaxPermSize=192m
+-Xmx512m
+-javaagent:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/monitor/flashlight-agent.jar
+-client
+-Djavax.xml.accessExternalSchema=all
+-Djavax.net.ssl.trustStore=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/cacerts.jks
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Dfelix.fileinstall.dir=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/autostart/
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dcom.sun.aas.installRoot=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish
+-Dfelix.fileinstall.poll=5000
+-Djava.endorsed.dirs=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/endorsed:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/endorsed
+-Djava.security.policy=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/server.policy
+-Dosgi.shell.telnet.maxconn=1
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dfelix.fileinstall.log.level=2
+-Djavax.net.ssl.keyStore=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/keystore.jks
+-Djava.security.auth.login.config=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/login.conf
+-Dfelix.fileinstall.disableConfigSave=false
+-Dfelix.fileinstall.bundles.new.start=true
+-Dcom.sun.aas.instanceRoot=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1
+-Dosgi.shell.telnet.port=6666
+-Dgosh.args=--nointeractive
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Dosgi.shell.telnet.ip=127.0.0.1
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Djava.awt.headless=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djava.ext.dirs=/opt/jdk1.8.0_161/lib/ext:/opt/jdk1.8.0_161/jre/lib/ext:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/lib/ext
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-Djava.library.path=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+

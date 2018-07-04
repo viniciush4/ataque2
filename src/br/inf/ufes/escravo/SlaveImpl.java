@@ -18,7 +18,7 @@ import com.sun.messaging.ConnectionConfiguration;
 import br.inf.ufes.ppd.Guess;
 import br.inf.ufes.ppd.Ordem;
 
-public class SlaveImpl implements MessageListener 
+public class SlaveImpl
 {
 	// Modo Overhead
 	private static boolean overhead;
@@ -64,6 +64,16 @@ public class SlaveImpl implements MessageListener
 			
 			// Lê o dicionário
 			lerDicionario();
+			
+			while(true)
+			{
+				Message m = consumer.receive();
+				if (m instanceof ObjectMessage)
+				{
+					Ordem ordem = (Ordem)((ObjectMessage)m).getObject();
+					startSubAttack(ordem);
+				}
+			}
 		} 
 		catch (Exception e) 
 		{
@@ -89,9 +99,6 @@ public class SlaveImpl implements MessageListener
 		context = connectionFactory.createContext();
 		producer = context.createProducer();
 		consumer = context.createConsumer(subAttacks,null,false); 
-		
-		// Define a classe como ouvidor de mensagens
-		consumer.setMessageListener(new SlaveImpl()); 
 	}
 	
 	public static void lerDicionario()
@@ -120,24 +127,7 @@ public class SlaveImpl implements MessageListener
 		}
 	}
 
-	@Override
-	public void onMessage(Message m) 
-	{
-		try 
-		{
-			if (m instanceof ObjectMessage)
-			{
-				Ordem ordem = (Ordem)((ObjectMessage)m).getObject();
-				startSubAttack(ordem);
-			}
-		} 
-		catch (Exception e) 
-		{
-			e.printStackTrace();
-		}
-	}
-	
-	public void startSubAttack(Ordem ordem)
+	public static void startSubAttack(Ordem ordem)
 	{
 		// Se não estiver em modo overhead
 		if(!overhead) 
@@ -197,7 +187,7 @@ public class SlaveImpl implements MessageListener
 	}
 	
 	// Verifica se uma sequência de bytes existe dentro de outra
-	public boolean bytesContains(byte[] mensagem, byte[] knowtext) 
+	public static boolean bytesContains(byte[] mensagem, byte[] knowtext) 
 	{
 		int contadorBytesIguais;
 		

@@ -15,7 +15,7 @@ import br.inf.ufes.ppd.Guess;
 import br.inf.ufes.ppd.Master;
 import br.inf.ufes.ppd.Ordem;
 
-public class MasterImpl implements MessageListener, Master
+public class MasterImpl implements Master
 {
 	// Quantidade de índices por sub-ataque
 	private static int m;
@@ -23,11 +23,11 @@ public class MasterImpl implements MessageListener, Master
 	// Host
 	private static String host;
 	
-	// Lista de sub-ataques
+	// Fila de sub-ataques
 	private static Queue subAttacks;
 	private static JMSProducer producer;
 	
-	// Lista de chutes
+	// Fila de chutes
 	private static Queue guesses;
 	private static JMSConsumer consumer;
 	
@@ -54,6 +54,43 @@ public class MasterImpl implements MessageListener, Master
 			// Configura RMI e JMS
 			configurarRMI();
 			configurarJMS();
+			
+			while(true) 
+			{
+				Message m = consumer.receive();
+				if (m instanceof ObjectMessage)
+				{
+					// Objeto guess recebido
+					Guess guess = (Guess)((ObjectMessage) m).getObject();
+					
+					// Coloca o guess na lista do ataque correspondente
+					synchronized(attacks) {attacks.get(guess.getAttackNumber()).guesses.add(guess);}
+					
+					// Imprime aviso de chegada de guess no mestre
+					System.out.println("["+guess.getNomeEscravo()+" #"+guess.getAttackNumber()+"] "+guess.getKey());
+				}
+				if (m instanceof TextMessage)
+				{
+					// Coverte a mensagem em um interio (representa o número do ataque)
+					int attackNumber = Integer.parseInt(((TextMessage) m).getText());
+					int quantidadeSubAttacksEmAndamento;
+					
+					synchronized(attacks) 
+					{
+						// Decrementa a quantidade de sub-ataques em andamento
+						attacks.get(attackNumber).decrementaSubataquesEmAndamento();
+						
+						quantidadeSubAttacksEmAndamento = attacks.get(attackNumber).getQuantidadeSubataquesEmAndamento();
+					}
+						
+					// Se a quantidade de sub-ataques em andamento chegou a zero
+					if(quantidadeSubAttacksEmAndamento == 0) 
+					{
+						// Acorda a thread do mestre
+						synchronized(MasterImpl.class) {MasterImpl.class.notify();}
+					}
+				}
+			}
 		}
 		catch (Exception e) 
 		{
@@ -84,8 +121,7 @@ public class MasterImpl implements MessageListener, Master
 		// Cria e configura a conection factory
 		Logger.getLogger("").setLevel(Level.SEVERE);
 		com.sun.messaging.ConnectionFactory connectionFactory = new com.sun.messaging.ConnectionFactory();
-		connectionFactory.setProperty(ConnectionConfiguration.imqAddressList,host+":7676");
-		connectionFactory.setProperty(ConnectionConfiguration.imqConsumerFlowLimitPrefetch,"false");		
+		connectionFactory.setProperty(ConnectionConfiguration.imqAddressList,host+":7676");	
 		System.out.println("[master] Resolved connection factory.");
 
 		// Conecta com as filas de sub-ataques e guesses
@@ -96,10 +132,7 @@ public class MasterImpl implements MessageListener, Master
 		// Cria context, producer e consumer
 		context = connectionFactory.createContext();
 		producer = context.createProducer();
-		consumer = context.createConsumer(guesses,null,false); 
-
-		// Define a classe como ouvidor de mensagens
-		consumer.setMessageListener(new MasterImpl()); 
+		consumer = context.createConsumer(guesses,null,false);  
 	}
 
 	public Guess[] attack(byte[] ciphertext, byte[] knowntext) throws RemoteException 
@@ -154,49 +187,5 @@ public class MasterImpl implements MessageListener, Master
 		
 		// Retorna os guesses
 		return guesses;
-	}
-
-	@Override
-	public void onMessage(Message m) 
-	{
-		try 
-		{
-			if (m instanceof ObjectMessage)
-			{
-				// Objeto guess recebido
-				Guess guess = (Guess)((ObjectMessage) m).getObject();
-				
-				// Coloca o guess na lista do ataque correspondente
-				synchronized(attacks) {attacks.get(guess.getAttackNumber()).guesses.add(guess);}
-				
-				// Imprime aviso de chegada de guess no mestre
-				System.out.println("["+guess.getNomeEscravo()+" #"+guess.getAttackNumber()+"] "+guess.getKey());
-			}
-			if (m instanceof TextMessage)
-			{
-				// Coverte a mensagem em um interio (representa o número do ataque)
-				int attackNumber = Integer.parseInt(((TextMessage) m).getText());
-				int quantidadeSubAttacksEmAndamento;
-				
-				synchronized(attacks) 
-				{
-					// Decrementa a quantidade de sub-ataques em andamento
-					attacks.get(attackNumber).decrementaSubataquesEmAndamento();
-					
-					quantidadeSubAttacksEmAndamento = attacks.get(attackNumber).getQuantidadeSubataquesEmAndamento();
-				}
-					
-				// Se a quantidade de sub-ataques em andamento chegou a zero
-				if(quantidadeSubAttacksEmAndamento == 0) 
-				{
-					// Acorda a thread do mestre
-					synchronized(MasterImpl.class) {MasterImpl.class.notify();}
-				}
-			}
-		} 
-		catch (JMSException e) 
-		{
-			e.printStackTrace();
-		}
 	}
 }
