@@ -163,7 +163,7 @@ public class MasterImpl implements Master
 		}
 		
 		// Distrubui o resto da divisão
-		Ordem ordem = new Ordem(attack.getAttackNumber(), (indiceFinal+1), (mod-1), ciphertext, knowntext);
+		Ordem ordem = new Ordem(attack.getAttackNumber(), (indiceFinal+1), (indiceFinal+mod), ciphertext, knowntext);
 		ObjectMessage message = context.createObjectMessage(ordem); 
 		producer.send(subAttacks,message);
 		synchronized(attacks) { attacks.get(attack.getAttackNumber()).incrementaSubataquesEmAndamento(); }

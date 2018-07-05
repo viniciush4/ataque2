@@ -6509,3 +6509,299 @@ Java Runtime: 1.8.0_161 Oracle Corporation /opt/jdk1.8.0_161/jre
 |#]
 
 
+[#|2018-07-04T20:09:05.005-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1065]: Accepting: guest@127.0.0.1:43998->jms:36923. Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T20:09:05.072-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1132]: Auto-creating destination GuessesQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T20:09:34.752-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1065]: Accepting: guest@127.0.0.1:44002->jms:36923. Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T20:09:34.832-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1132]: Auto-creating destination SubAttacksQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T20:09:52.589-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1065]: Accepting: guest@127.0.0.1:44006->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T20:10:26.850-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1066]:   Closing: guest@127.0.0.1:43998->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T20:11:24.870-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1066]:   Closing: guest@127.0.0.1:44002->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T20:11:26.955-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1066]:   Closing: guest@127.0.0.1:44006->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=0 broker=0
+|#]
+
+
+[#|2018-07-04T20:11:42.945-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1065]: Accepting: guest@127.0.0.1:44016->jms:36923. Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T20:11:49.592-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1065]: Accepting: guest@127.0.0.1:44020->jms:36923. Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T20:11:59.737-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1065]: Accepting: guest@127.0.0.1:44030->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T20:12:45.290-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1066]:   Closing: guest@127.0.0.1:44030->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T20:12:56.847-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1065]: Accepting: guest@127.0.0.1:44046->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T20:15:06.832-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1066]:   Closing: guest@127.0.0.1:44016->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T20:15:08.930-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1066]:   Closing: guest@127.0.0.1:44020->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T20:15:11.992-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1066]:   Closing: guest@127.0.0.1:44046->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=0 broker=0
+|#]
+
+
+[#|2018-07-04T20:17:11.991-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1130]: Destroying auto-created destination GuessesQueue [Queue] inactive for 120 seconds
+|#]
+
+
+[#|2018-07-04T20:17:11.991-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1517]: Destroying destination GuessesQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T20:17:11.992-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1387]: Purged 0 messages from destination GuessesQueue [Queue]
+|#]
+
+
+[#|2018-07-04T20:17:12.030-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1159]: Destination GuessesQueue [Queue] has been destroyed
+|#]
+
+
+[#|2018-07-04T20:17:12.031-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1130]: Destroying auto-created destination SubAttacksQueue [Queue] inactive for 120 seconds
+|#]
+
+
+[#|2018-07-04T20:17:12.032-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1517]: Destroying destination SubAttacksQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T20:17:12.033-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1387]: Purged 0 messages from destination SubAttacksQueue [Queue]
+|#]
+
+
+[#|2018-07-04T20:17:12.624-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1159]: Destination SubAttacksQueue [Queue] has been destroyed
+|#]
+
+
+[#|2018-07-04T21:37:56.903-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1065]: Accepting: guest@127.0.0.1:44406->jms:36923. Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T21:37:56.977-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1132]: Auto-creating destination GuessesQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T21:38:11.454-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1065]: Accepting: guest@127.0.0.1:44410->jms:36923. Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T21:38:11.559-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1132]: Auto-creating destination SubAttacksQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T21:38:23.002-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1065]: Accepting: guest@127.0.0.1:44416->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T21:38:37.493-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=166;_ThreadName=Thread-jms[6];|[B1065]: Accepting: guest@127.0.0.1:44420->jms:36923. Count: service=4 broker=4
+|#]
+
+
+[#|2018-07-04T21:47:54.820-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1066]:   Closing: guest@127.0.0.1:44406->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T21:48:08.088-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1065]: Accepting: guest@127.0.0.1:44452->jms:36923. Count: service=4 broker=4
+|#]
+
+
+[#|2018-07-04T21:48:17.559-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=132;_ThreadName=Thread-jms[4];|[B1066]:   Closing: guest@127.0.0.1:44452->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T21:50:52.619-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=133;_ThreadName=Thread-jms[5];|[B1065]: Accepting: guest@127.0.0.1:44476->jms:36923. Count: service=4 broker=4
+|#]
+
+
+[#|2018-07-04T21:50:54.542-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1066]:   Closing: guest@127.0.0.1:44410->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T21:51:06.207-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1065]: Accepting: guest@127.0.0.1:44480->jms:36923. Count: service=4 broker=4
+|#]
+
+
+[#|2018-07-04T21:51:07.248-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=166;_ThreadName=Thread-jms[6];|[B1066]:   Closing: guest@127.0.0.1:44420->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T21:51:16.069-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=166;_ThreadName=Thread-jms[6];|[B1065]: Accepting: guest@127.0.0.1:44484->jms:36923. Count: service=4 broker=4
+|#]
+
+
+[#|2018-07-04T21:51:17.434-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1066]:   Closing: guest@127.0.0.1:44416->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T21:51:27.700-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1065]: Accepting: guest@127.0.0.1:44488->jms:36923. Count: service=4 broker=4
+|#]
+
+
+[#|2018-07-04T21:55:09.310-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=133;_ThreadName=Thread-jms[5];|[B1066]:   Closing: guest@127.0.0.1:44476->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T21:55:20.709-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1066]:   Closing: guest@127.0.0.1:44480->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T21:55:23.061-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=166;_ThreadName=Thread-jms[6];|[B1066]:   Closing: guest@127.0.0.1:44484->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T21:55:25.327-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=106;_ThreadName=Thread-jms[1];|[B1066]:   Closing: guest@127.0.0.1:44488->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=0 broker=0
+|#]
+
+
+[#|2018-07-04T21:57:23.059-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1130]: Destroying auto-created destination GuessesQueue [Queue] inactive for 120 seconds
+|#]
+
+
+[#|2018-07-04T21:57:23.059-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1517]: Destroying destination GuessesQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T21:57:23.060-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1387]: Purged 0 messages from destination GuessesQueue [Queue]
+|#]
+
+
+[#|2018-07-04T21:57:23.112-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1159]: Destination GuessesQueue [Queue] has been destroyed
+|#]
+
+
+[#|2018-07-04T21:57:25.326-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1130]: Destroying auto-created destination SubAttacksQueue [Queue] inactive for 120 seconds
+|#]
+
+
+[#|2018-07-04T21:57:25.326-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1517]: Destroying destination SubAttacksQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T21:57:25.327-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1387]: Purged 0 messages from destination SubAttacksQueue [Queue]
+|#]
+
+
+[#|2018-07-04T21:57:25.412-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=100;_ThreadName=MQTimer-Thread;|[B1159]: Destination SubAttacksQueue [Queue] has been destroyed
+|#]
+
+
+[#|2018-07-04T21:57:28.286-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1065]: Accepting: guest@127.0.0.1:44550->jms:36923. Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T21:57:28.371-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1132]: Auto-creating destination GuessesQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T21:57:45.557-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=166;_ThreadName=Thread-jms[6];|[B1065]: Accepting: guest@127.0.0.1:44554->jms:36923. Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T21:57:45.643-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=166;_ThreadName=Thread-jms[6];|[B1132]: Auto-creating destination SubAttacksQueue [Queue] 
+|#]
+
+
+[#|2018-07-04T21:58:07.028-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1065]: Accepting: guest@127.0.0.1:44558->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T21:58:25.870-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=133;_ThreadName=Thread-jms[5];|[B1065]: Accepting: guest@127.0.0.1:44564->jms:36923. Count: service=4 broker=4
+|#]
+
+
+[#|2018-07-04T22:01:11.498-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1066]:   Closing: guest@127.0.0.1:44550->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T22:01:20.973-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1065]: Accepting: guest@127.0.0.1:44608->jms:36923. Count: service=4 broker=4
+|#]
+
+
+[#|2018-07-04T22:02:09.176-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1066]:   Closing: guest@127.0.0.1:44608->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T22:02:12.482-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=133;_ThreadName=Thread-jms[5];|[B1066]:   Closing: guest@127.0.0.1:44564->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T22:02:15.572-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=166;_ThreadName=Thread-jms[6];|[B1066]:   Closing: guest@127.0.0.1:44554->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T22:02:19.334-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1066]:   Closing: guest@127.0.0.1:44558->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=0 broker=0
+|#]
+
+
+[#|2018-07-04T22:03:27.977-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1065]: Accepting: guest@127.0.0.1:44638->jms:36923. Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T22:03:43.640-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=167;_ThreadName=Thread-jms[7];|[B1065]: Accepting: guest@127.0.0.1:44642->jms:36923. Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T22:03:58.307-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=133;_ThreadName=Thread-jms[5];|[B1065]: Accepting: guest@127.0.0.1:44648->jms:36923. Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T22:04:13.722-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1065]: Accepting: guest@127.0.0.1:44652->jms:36923. Count: service=4 broker=4
+|#]
+
+
+[#|2018-07-04T22:05:12.386-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=107;_ThreadName=Thread-jms[2];|[B1066]:   Closing: guest@127.0.0.1:44638->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T22:05:20.787-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=108;_ThreadName=Thread-jms[3];|[B1065]: Accepting: guest@127.0.0.1:44664->jms:36923. Count: service=4 broker=4
+|#]
+
+
+[#|2018-07-04T22:06:41.760-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=108;_ThreadName=Thread-jms[3];|[B1066]:   Closing: guest@127.0.0.1:44664->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=3 broker=3
+|#]
+
+
+[#|2018-07-04T22:06:44.860-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=105;_ThreadName=Thread-jms[0];|[B1066]:   Closing: guest@127.0.0.1:44652->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=2 broker=2
+|#]
+
+
+[#|2018-07-04T22:06:47.965-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=167;_ThreadName=Thread-jms[7];|[B1066]:   Closing: guest@127.0.0.1:44642->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=1 broker=1
+|#]
+
+
+[#|2018-07-04T22:06:50.123-0300|INFO|5.1.1|imq.log.Logger|_ThreadID=133;_ThreadName=Thread-jms[5];|[B1066]:   Closing: guest@127.0.0.1:44648->jms:36923 because "[B0061]: Client exited without closing connections". Count: service=0 broker=0
+|#]
+
+

@@ -3495,3 +3495,67 @@ false
 -asadmin-classname
 com.sun.enterprise.admin.cli.AdminMain]]
 
+[2018-07-04T22:03:09.610-0300] [] [INFO] [NCLS-GFLAUNCHER-00005] [javax.enterprise.launcher] [tid: _ThreadID=1 _ThreadName=main] [timeMillis: 1530752589610] [levelValue: 800] [[
+  JVM invocation command line:
+/opt/jdk1.8.0_161/bin/java
+-cp
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/glassfish.jar
+-XX:+UnlockDiagnosticVMOptions
+-XX:NewRatio=2
+-XX:MaxPermSize=192m
+-Xmx512m
+-javaagent:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/monitor/flashlight-agent.jar
+-client
+-Djavax.xml.accessExternalSchema=all
+-Djavax.net.ssl.trustStore=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/cacerts.jks
+-Djdk.tls.rejectClientInitiatedRenegotiation=true
+-Djdk.corba.allowOutputStreamSubclass=true
+-Dfelix.fileinstall.dir=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/autostart/
+-Dorg.glassfish.additionalOSGiBundlesToStart=org.apache.felix.shell,org.apache.felix.gogo.runtime,org.apache.felix.gogo.shell,org.apache.felix.gogo.command,org.apache.felix.shell.remote,org.apache.felix.fileinstall
+-Dcom.sun.aas.installRoot=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish
+-Dfelix.fileinstall.poll=5000
+-Djava.endorsed.dirs=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/modules/endorsed:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/endorsed
+-Djava.security.policy=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/server.policy
+-Dosgi.shell.telnet.maxconn=1
+-Dfelix.fileinstall.bundles.startTransient=true
+-Dcom.sun.enterprise.config.config_environment_factory_class=com.sun.enterprise.config.serverbeans.AppserverConfigEnvironmentFactory
+-Dfelix.fileinstall.log.level=2
+-Djavax.net.ssl.keyStore=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/keystore.jks
+-Djava.security.auth.login.config=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/config/login.conf
+-Dfelix.fileinstall.disableConfigSave=false
+-Dfelix.fileinstall.bundles.new.start=true
+-Dcom.sun.aas.instanceRoot=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1
+-Dosgi.shell.telnet.port=6666
+-Dgosh.args=--nointeractive
+-Dcom.sun.enterprise.security.httpsOutboundKeyAlias=s1as
+-Dosgi.shell.telnet.ip=127.0.0.1
+-DANTLR_USE_DIRECT_CLASS_LOADING=true
+-Djava.awt.headless=true
+-Dcom.ctc.wstx.returnNullForDefaultNamespace=true
+-Djava.ext.dirs=/opt/jdk1.8.0_161/lib/ext:/opt/jdk1.8.0_161/jre/lib/ext:/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1/lib/ext
+-Djdbc.drivers=org.apache.derby.jdbc.ClientDriver
+-Djava.library.path=/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+com.sun.enterprise.glassfish.bootstrap.ASMain
+-upgrade
+false
+-domaindir
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains/domain1
+-read-stdin
+true
+-asadmin-args
+--host,,,localhost,,,--port,,,4848,,,--secure=false,,,--terse=false,,,--echo=false,,,--interactive=true,,,start-domain,,,--verbose=false,,,--watchdog=false,,,--debug=false,,,--domaindir,,,/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/domains,,,domain1
+-domainname
+domain1
+-instancename
+server
+-type
+DAS
+-verbose
+false
+-asadmin-classpath
+/home/vinicius/Área de Trabalho/PROCESSAMENTO PARALELO E DISTRIBUIDO/ataque2/glassfish5/glassfish/lib/client/appserver-cli.jar
+-debug
+false
+-asadmin-classname
+com.sun.enterprise.admin.cli.AdminMain]]
+
